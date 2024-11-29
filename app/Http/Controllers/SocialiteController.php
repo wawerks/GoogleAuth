@@ -51,6 +51,7 @@ class SocialiteController extends Controller
                 'email' => $googleUser->email,
                 'password' => Hash::make(Str::random(16)), // Random password for new users
                 'google_id' => $googleUser->id,
+                'profile_image' => $googleUser->avatar,
             ]);
 
             // Log in the new user

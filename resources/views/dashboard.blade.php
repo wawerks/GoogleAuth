@@ -15,9 +15,10 @@
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                         <!-- Avatar Section -->
                         <div class="flex justify-center items-center">
-                            <img src="{{ Auth::user()->avatar ?? 'https://www.gravatar.com/avatar/' . md5(strtolower(trim(Auth::user()->email))) . '?d=mp&s=200' }}" 
-                                 alt="User Avatar" 
-                                 class="w-32 h-32 rounded-full border-4 border-gray-300 shadow-md">
+                            <img 
+                                src="{{ Auth::user()->profile_image ?? 'https://www.gravatar.com/avatar/' . md5(strtolower(trim(Auth::user()->email))) . '?d=mp&s=800' }}" 
+                                alt="User Avatar" 
+                                class="w-40 h-40 rounded-full border-4 border-gradient-to-r from-blue-500 via-green-400 to-teal-300 shadow-lg transition-transform transform hover:scale-110 object-cover">
                         </div>
 
                         <!-- User Information Section -->
@@ -26,7 +27,6 @@
                             <div class="space-y-2">
                                 <p><strong class="text-gray-600">Name:</strong> {{ Auth::user()->name }}</p>
                                 <p><strong class="text-gray-600">Email:</strong> {{ Auth::user()->email }}</p>
-
                             </div>
                         </div>
                     </div>
